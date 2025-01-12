@@ -41,9 +41,10 @@ var (
 )
 
 const (
-	privateKeyKey     = "privateKey"
-	gceAuthentication = "gce"
-	jwtAuthentication = "jwt"
+	privateKeyKey                  = "privateKey"
+	gceAuthentication              = "gce"
+	jwtAuthentication              = "jwt"
+	oauthpassthroughAuthentication = "oauthPassthrough"
 )
 
 // config is the fields parsed from the front end
@@ -54,6 +55,7 @@ type config struct {
 	TokenURI                    string `json:"tokenUri"`
 	ServiceAccountToImpersonate string `json:"serviceAccountToImpersonate"`
 	UsingImpersonation          bool   `json:"usingImpersonation"`
+	OAuthPassThrough            bool   `json:"oauthPassThru"`
 }
 
 // toServiceAccountJSON creates the serviceAccountJSON bytes from the config fields
